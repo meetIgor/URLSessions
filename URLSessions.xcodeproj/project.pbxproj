@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AD136B2F28C2392E00E5B7A0 /* urlSession-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "urlSession-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD136B2F28C2392E00E5B7A0 /* URLSessions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLSessions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD136B3228C2392E00E5B7A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD136B3428C2392E00E5B7A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AD136B3928C2392E00E5B7A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		AD136B3028C2392E00E5B7A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD136B2F28C2392E00E5B7A0 /* urlSession-1.app */,
+				AD136B2F28C2392E00E5B7A0 /* URLSessions.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,9 +130,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AD136B2E28C2392E00E5B7A0 /* urlSession-1 */ = {
+		AD136B2E28C2392E00E5B7A0 /* URLSessions */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD136B4328C2392F00E5B7A0 /* Build configuration list for PBXNativeTarget "urlSession-1" */;
+			buildConfigurationList = AD136B4328C2392F00E5B7A0 /* Build configuration list for PBXNativeTarget "URLSessions" */;
 			buildPhases = (
 				AD136B2B28C2392E00E5B7A0 /* Sources */,
 				AD136B2C28C2392E00E5B7A0 /* Frameworks */,
@@ -142,9 +142,9 @@
 			);
 			dependencies = (
 			);
-			name = "urlSession-1";
+			name = URLSessions;
 			productName = "urlSession-1";
-			productReference = AD136B2F28C2392E00E5B7A0 /* urlSession-1.app */;
+			productReference = AD136B2F28C2392E00E5B7A0 /* URLSessions.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -162,7 +162,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AD136B2A28C2392E00E5B7A0 /* Build configuration list for PBXProject "urlSession-1" */;
+			buildConfigurationList = AD136B2A28C2392E00E5B7A0 /* Build configuration list for PBXProject "URLSessions" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -175,7 +175,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AD136B2E28C2392E00E5B7A0 /* urlSession-1 */,
+				AD136B2E28C2392E00E5B7A0 /* URLSessions */,
 			);
 		};
 /* End PBXProject section */
@@ -401,7 +401,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AD136B2A28C2392E00E5B7A0 /* Build configuration list for PBXProject "urlSession-1" */ = {
+		AD136B2A28C2392E00E5B7A0 /* Build configuration list for PBXProject "URLSessions" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD136B4128C2392F00E5B7A0 /* Debug */,
@@ -410,7 +410,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD136B4328C2392F00E5B7A0 /* Build configuration list for PBXNativeTarget "urlSession-1" */ = {
+		AD136B4328C2392F00E5B7A0 /* Build configuration list for PBXNativeTarget "URLSessions" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD136B4428C2392F00E5B7A0 /* Debug */,
