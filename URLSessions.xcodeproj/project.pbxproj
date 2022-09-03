@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		AD136B3328C2392E00E5B7A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B3228C2392E00E5B7A0 /* AppDelegate.swift */; };
 		AD136B3528C2392E00E5B7A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B3428C2392E00E5B7A0 /* SceneDelegate.swift */; };
-		AD136B3728C2392E00E5B7A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B3628C2392E00E5B7A0 /* ViewController.swift */; };
 		AD136B3A28C2392E00E5B7A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD136B3828C2392E00E5B7A0 /* Main.storyboard */; };
 		AD136B3C28C2392F00E5B7A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD136B3B28C2392F00E5B7A0 /* Assets.xcassets */; };
 		AD136B3F28C2392F00E5B7A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD136B3D28C2392F00E5B7A0 /* LaunchScreen.storyboard */; };
+		AD136B4D28C2399300E5B7A0 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B4C28C2399300E5B7A0 /* Drink.swift */; };
+		AD136B4F28C2431E00E5B7A0 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B4E28C2431E00E5B7A0 /* MainCollectionViewController.swift */; };
+		AD136B5128C2474B00E5B7A0 /* ActionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5028C2474B00E5B7A0 /* ActionCollectionViewCell.swift */; };
+		AD136B5328C2481200E5B7A0 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5228C2481200E5B7A0 /* ImageViewController.swift */; };
+		AD136B5528C2482500E5B7A0 /* DrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5428C2482500E5B7A0 /* DrinksTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AD136B2F28C2392E00E5B7A0 /* urlSession-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "urlSession-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD136B3228C2392E00E5B7A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD136B3428C2392E00E5B7A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AD136B3628C2392E00E5B7A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD136B3928C2392E00E5B7A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD136B3B28C2392F00E5B7A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD136B3E28C2392F00E5B7A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD136B4028C2392F00E5B7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD136B4C28C2399300E5B7A0 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		AD136B4E28C2431E00E5B7A0 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		AD136B5028C2474B00E5B7A0 /* ActionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCollectionViewCell.swift; sourceTree = "<group>"; };
+		AD136B5228C2481200E5B7A0 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		AD136B5428C2482500E5B7A0 /* DrinksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,67 @@
 		AD136B3128C2392E00E5B7A0 /* urlSession-1 */ = {
 			isa = PBXGroup;
 			children = (
-				AD136B3228C2392E00E5B7A0 /* AppDelegate.swift */,
-				AD136B3428C2392E00E5B7A0 /* SceneDelegate.swift */,
-				AD136B3628C2392E00E5B7A0 /* ViewController.swift */,
-				AD136B3828C2392E00E5B7A0 /* Main.storyboard */,
-				AD136B3B28C2392F00E5B7A0 /* Assets.xcassets */,
-				AD136B3D28C2392F00E5B7A0 /* LaunchScreen.storyboard */,
-				AD136B4028C2392F00E5B7A0 /* Info.plist */,
+				AD136B4B28C2397300E5B7A0 /* Services */,
+				AD136B4A28C2396A00E5B7A0 /* Models */,
+				AD136B4628C2394700E5B7A0 /* App */,
+				AD136B4728C2395000E5B7A0 /* ViewControllers */,
+				AD136B4828C2395A00E5B7A0 /* Storyboards */,
+				AD136B4928C2396200E5B7A0 /* Resources */,
 			);
 			path = "urlSession-1";
+			sourceTree = "<group>";
+		};
+		AD136B4628C2394700E5B7A0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AD136B3228C2392E00E5B7A0 /* AppDelegate.swift */,
+				AD136B3428C2392E00E5B7A0 /* SceneDelegate.swift */,
+				AD136B4028C2392F00E5B7A0 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AD136B4728C2395000E5B7A0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD136B4E28C2431E00E5B7A0 /* MainCollectionViewController.swift */,
+				AD136B5028C2474B00E5B7A0 /* ActionCollectionViewCell.swift */,
+				AD136B5228C2481200E5B7A0 /* ImageViewController.swift */,
+				AD136B5428C2482500E5B7A0 /* DrinksTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AD136B4828C2395A00E5B7A0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AD136B3828C2392E00E5B7A0 /* Main.storyboard */,
+				AD136B3D28C2392F00E5B7A0 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AD136B4928C2396200E5B7A0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AD136B3B28C2392F00E5B7A0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AD136B4A28C2396A00E5B7A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD136B4C28C2399300E5B7A0 /* Drink.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AD136B4B28C2397300E5B7A0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD136B3728C2392E00E5B7A0 /* ViewController.swift in Sources */,
 				AD136B3328C2392E00E5B7A0 /* AppDelegate.swift in Sources */,
+				AD136B5528C2482500E5B7A0 /* DrinksTableViewController.swift in Sources */,
+				AD136B4F28C2431E00E5B7A0 /* MainCollectionViewController.swift in Sources */,
+				AD136B4D28C2399300E5B7A0 /* Drink.swift in Sources */,
 				AD136B3528C2392E00E5B7A0 /* SceneDelegate.swift in Sources */,
+				AD136B5328C2481200E5B7A0 /* ImageViewController.swift in Sources */,
+				AD136B5128C2474B00E5B7A0 /* ActionCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "urlSession-1/Info.plist";
+				INFOPLIST_FILE = "urlSession-1/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -315,7 +379,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "urlSession-1/Info.plist";
+				INFOPLIST_FILE = "urlSession-1/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
