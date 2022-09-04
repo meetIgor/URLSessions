@@ -19,10 +19,11 @@
 		AD136B5528C2482500E5B7A0 /* DrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5428C2482500E5B7A0 /* DrinksTableViewController.swift */; };
 		AD136B5728C36D5D00E5B7A0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5628C36D5D00E5B7A0 /* NetworkManager.swift */; };
 		AD136B5928C3A4E300E5B7A0 /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5828C3A4E300E5B7A0 /* APOD.swift */; };
+		AD136B5C28C4BF7600E5B7A0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AD136B5B28C4BF7600E5B7A0 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AD136B2F28C2392E00E5B7A0 /* URLSessions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLSessions.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD136B2F28C2392E00E5B7A0 /* urlSession-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "urlSession-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD136B3228C2392E00E5B7A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD136B3428C2392E00E5B7A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AD136B3928C2392E00E5B7A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD136B5C28C4BF7600E5B7A0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +62,7 @@
 		AD136B3028C2392E00E5B7A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD136B2F28C2392E00E5B7A0 /* URLSessions.app */,
+				AD136B2F28C2392E00E5B7A0 /* urlSession-1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,9 +138,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AD136B2E28C2392E00E5B7A0 /* URLSessions */ = {
+		AD136B2E28C2392E00E5B7A0 /* urlSession-1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD136B4328C2392F00E5B7A0 /* Build configuration list for PBXNativeTarget "URLSessions" */;
+			buildConfigurationList = AD136B4328C2392F00E5B7A0 /* Build configuration list for PBXNativeTarget "urlSession-1" */;
 			buildPhases = (
 				AD136B2B28C2392E00E5B7A0 /* Sources */,
 				AD136B2C28C2392E00E5B7A0 /* Frameworks */,
@@ -148,9 +150,12 @@
 			);
 			dependencies = (
 			);
-			name = URLSessions;
+			name = "urlSession-1";
+			packageProductDependencies = (
+				AD136B5B28C4BF7600E5B7A0 /* Alamofire */,
+			);
 			productName = "urlSession-1";
-			productReference = AD136B2F28C2392E00E5B7A0 /* URLSessions.app */;
+			productReference = AD136B2F28C2392E00E5B7A0 /* urlSession-1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -168,7 +173,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AD136B2A28C2392E00E5B7A0 /* Build configuration list for PBXProject "URLSessions" */;
+			buildConfigurationList = AD136B2A28C2392E00E5B7A0 /* Build configuration list for PBXProject "urlSession-1" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -177,11 +182,14 @@
 				Base,
 			);
 			mainGroup = AD136B2628C2392E00E5B7A0;
+			packageReferences = (
+				AD136B5A28C4BF7600E5B7A0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = AD136B3028C2392E00E5B7A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AD136B2E28C2392E00E5B7A0 /* URLSessions */,
+				AD136B2E28C2392E00E5B7A0 /* urlSession-1 */,
 			);
 		};
 /* End PBXProject section */
@@ -409,7 +417,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AD136B2A28C2392E00E5B7A0 /* Build configuration list for PBXProject "URLSessions" */ = {
+		AD136B2A28C2392E00E5B7A0 /* Build configuration list for PBXProject "urlSession-1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD136B4128C2392F00E5B7A0 /* Debug */,
@@ -418,7 +426,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD136B4328C2392F00E5B7A0 /* Build configuration list for PBXNativeTarget "URLSessions" */ = {
+		AD136B4328C2392F00E5B7A0 /* Build configuration list for PBXNativeTarget "urlSession-1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD136B4428C2392F00E5B7A0 /* Debug */,
@@ -428,6 +436,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD136B5A28C4BF7600E5B7A0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD136B5B28C4BF7600E5B7A0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD136B5A28C4BF7600E5B7A0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD136B2728C2392E00E5B7A0 /* Project object */;
 }
