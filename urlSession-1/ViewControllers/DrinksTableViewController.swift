@@ -35,15 +35,26 @@ class DrinksTableViewController: UITableViewController {
         content.text = drink.name
         content.secondaryText = drink.id
         
-        guard let imageURL = URL(string: drink.imageURL ?? "") else { return cell }
+//        guard let imageURL = URL(string: drink.imageURL ?? "") else { return cell }
+//
+//        DispatchQueue.global().async {
+//            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+//            DispatchQueue.main.async {
+//                content.image = UIImage(data: imageData)
+//                cell.contentConfiguration = content
+//            }
+//        }
         
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-            DispatchQueue.main.async {
+        NetworkManager.shared.fetchImage(from: drink.imageURL) { result in
+            switch result {
+            case .success(let imageData):
                 content.image = UIImage(data: imageData)
                 cell.contentConfiguration = content
+            case .failure(let error):
+                print(error)
             }
         }
+        
         content.imageProperties.cornerRadius = 15 //tableView.rowHeight / 2
         
         
@@ -57,22 +68,41 @@ class DrinksTableViewController: UITableViewController {
 extension DrinksTableViewController {
     
     func fetchDrinks() {
-        guard let url = URL(string: Link.margaritaURL.rawValue) else { return }
+//        guard let url = URL(string: Link.margaritaURL.rawValue) else { return }
+//
+//        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+//            guard let data = data else {
+//                print(error?.localizedDescription ?? "No error description")
+//                return
+//            }
+//            do {
+//                self?.drinks = try JSONDecoder().decode(Drink.self, from: data)
+//                DispatchQueue.main.async {
+//                    self?.tableView.reloadData()
+//                }
+//            } catch let error {
+//                print(error.localizedDescription)
+//            }
+//        }.resume()
         
-        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            do {
-                self?.drinks = try JSONDecoder().decode(Drink.self, from: data)
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }.resume()
+//        NetworkManager.shared.fetchDrinks(from: Link.margaritaURL.rawValue) { [weak self] result in
+//            switch result {
+//            case .success(let drinks):
+//                self?.drinks = drinks
+//                self?.tableView.reloadData()
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
         
+        NetworkManager.shared.fetch(Drink.self, from: Link.margaritaURL.rawValue) { [weak self] result in
+            switch result {
+            case .success(let drinks):
+                self?.drinks = drinks
+                self?.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

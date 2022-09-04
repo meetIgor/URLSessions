@@ -21,6 +21,7 @@ class ImageViewController: UIViewController {
     }
     
     private func fetchImage() {
+        /*
         guard let url = URL(string: Link.imageURL.rawValue) else { return }
         
         URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
@@ -37,6 +38,24 @@ class ImageViewController: UIViewController {
                 self?.activityIndicator.stopAnimating()
             }
         }.resume()
+        */
+        
+        /*
+        NetworkManager.shared.fetchImage(from: Link.imageURL.rawValue) { [weak self] imageData in
+            self?.imageView.image = UIImage(data: imageData)
+            self?.activityIndicator.stopAnimating()
+        }
+        */
+        
+        NetworkManager.shared.fetchImage(from: Link.imageURL.rawValue) { [weak self] result in
+            switch result {
+            case .success(let imageData):
+                self?.imageView.image = UIImage(data: imageData)
+                self?.activityIndicator.stopAnimating()
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
 }

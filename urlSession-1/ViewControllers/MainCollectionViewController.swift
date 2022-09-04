@@ -66,6 +66,14 @@ class MainCollectionViewController: UICollectionViewController {
             fetchDrinks()
         case .fetchDrinksToTable:
             performSegue(withIdentifier: "showDrinks", sender: nil)
+        case .postRequest:
+            postRequestWithDict()
+        case .postRequestWithModel:
+            postRequestWithModel()
+        case .fetchAPOD:
+            fetchAPOD()
+        case .fetchAPODWithParam:
+            fetchAPODWithParam()
         }
     }
 }
@@ -86,24 +94,106 @@ extension MainCollectionViewController {
     }
     
     private func fetchDrinks() {
-        guard let url = URL(string: Link.margaritaURL.rawValue) else { return }
+//        guard let url = URL(string: Link.margaritaURL.rawValue) else { return }
+//
+//        URLSession.shared.dataTask(with: url) { [unowned self] data, _, error in
+//            guard let data = data else {
+//                print(error?.localizedDescription ?? "No error description")
+//                return
+//            }
+//
+//            do {
+//                let drinks = try JSONDecoder().decode(Drink.self, from: data)
+//                print(drinks)
+//                self.successAlert()
+//            } catch let error {
+//                print(error)
+//                self.failedAlert()
+//            }
+//        }.resume()
+    
+//        NetworkManager.shared.fetchDrinks(from: Link.margaritaURL.rawValue) { [weak self] result in
+//            switch result {
+//            case .success(let drinks):
+//                print(drinks)
+//                self?.successAlert()
+//            case .failure(let error):
+//                print(error)
+//                self?.failedAlert()
+//            }
+//        }
         
-        URLSession.shared.dataTask(with: url) { [unowned self] data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            do {
-                let drinks = try JSONDecoder().decode(Drink.self, from: data)
+        NetworkManager.shared.fetch(Drink.self, from: Link.margaritaURL.rawValue) { [weak self] result in
+            switch result {
+            case .success(let drinks):
                 print(drinks)
-                self.successAlert()
-            } catch let error {
+                self?.successAlert()
+            case .failure(let error):
                 print(error)
-                self.failedAlert()
+                self?.failedAlert()
             }
-        }.resume()
+        }
+    }
+    
+    private func postRequestWithDict() {
+        let drink = [
+            "id": "001",
+            "name": "Negroni",
+            "category": "alcoholic"
+        ]
         
+        NetworkManager.shared.postRequest(with: drink, to: Link.postRequest.rawValue) { [weak self] result in
+            switch result {
+            case .success(let json):
+                print(json)
+                self?.successAlert()
+            case .failure(let error):
+                print(error)
+                self?.failedAlert()
+            }
+        }
+    }
+    
+    private func postRequestWithModel() {
+        let negroni = Cocktail(id: "007", name: "Negroni", drinkAlternate: "NO", tags: "alc, tasty", video: nil, category: "alcoholic", iba: nil, alcoholic: "YES", glass: "glass#2", instructions: "to do to do to do to do", imageURL: "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg", ingredient1: "compary", ingredient2: "orange juice", ingredient3: "ice", ingredient4: nil, ingredient5: nil, ingredient6: nil, ingredient7: nil, ingredient8: nil, ingredient9: nil, ingredient10: nil, ingredient11: nil, ingredient12: nil, ingredient13: nil, ingredient14: nil, ingredient15: nil, measure1: "1/2", measure2: "2 tsp", measure3: "3", measure4: nil, measure5: nil, measure6: nil, measure7: nil, measure8: nil, measure9: nil, measure10: nil, measure11: nil, measure12: nil, measure13: nil, measure14: nil, measure15: nil)
+        let drink = Drink(drinks: [negroni])
+        
+        NetworkManager.shared.postRequestWithModel(with: drink, to: Link.postRequest.rawValue) { [weak self] result in
+            switch result {
+            case .success(let drink):
+                print(drink)
+                self?.successAlert()
+            case .failure(let error):
+                print(error)
+                self?.failedAlert()
+            }
+        }
+    }
+    
+    func fetchAPOD() {
+        NetworkManager.shared.fetchAPOD([APOD].self, from: nasaLink.apodURL.rawValue) { [weak self] result in
+            switch result {
+            case .success(let apod):
+                print(apod)
+                self?.successAlert()
+            case .failure(let error):
+                print(error)
+                self?.failedAlert()
+            }
+        }
+    }
+    
+    func fetchAPODWithParam() {
+//        NetworkManager.shared.fetchAPODWithParam(APOD.self, from: nasaLink.apodURLMain.rawValue) { [weak self] result in
+//            switch result {
+//            case .success(let apod):
+//                print(apod)
+//                self?.successAlert()
+//            case .failure(let error):
+//                print(error)
+//                self?.failedAlert()
+//            }
+//        }
     }
 }
 
@@ -112,6 +202,10 @@ enum Action: String, CaseIterable {
     case showImage = "Show Image"
     case fetchDrinks = "Fetch Drinks"
     case fetchDrinksToTable = "Fetch Margarita"
+    case postRequest = "POST Request"
+    case postRequestWithModel = "POST Req (Model)"
+    case fetchAPOD = "fetch NASA"
+    case fetchAPODWithParam = "fetch NASA with Param"
 }
 
 // MARK: - Alert Controller

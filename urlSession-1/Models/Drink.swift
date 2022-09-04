@@ -7,16 +7,13 @@
 
 import Foundation
 
-enum Link: String {
-    case margaritaURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
-    case imageURL = "https://apod.nasa.gov/apod/image/2209/TulipCygX-1.jpg"
-}
 
-struct Drink: Decodable {
+
+struct Drink: Codable {
     let drinks: [Cocktail]
 }
 
-struct Cocktail: Decodable {
+struct Cocktail: Codable {
     let id: String
     let name: String
     let drinkAlternate: String?

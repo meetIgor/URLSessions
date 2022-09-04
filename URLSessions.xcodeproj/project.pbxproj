@@ -17,6 +17,8 @@
 		AD136B5128C2474B00E5B7A0 /* ActionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5028C2474B00E5B7A0 /* ActionCollectionViewCell.swift */; };
 		AD136B5328C2481200E5B7A0 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5228C2481200E5B7A0 /* ImageViewController.swift */; };
 		AD136B5528C2482500E5B7A0 /* DrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5428C2482500E5B7A0 /* DrinksTableViewController.swift */; };
+		AD136B5728C36D5D00E5B7A0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5628C36D5D00E5B7A0 /* NetworkManager.swift */; };
+		AD136B5928C3A4E300E5B7A0 /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5828C3A4E300E5B7A0 /* APOD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		AD136B5028C2474B00E5B7A0 /* ActionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCollectionViewCell.swift; sourceTree = "<group>"; };
 		AD136B5228C2481200E5B7A0 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		AD136B5428C2482500E5B7A0 /* DrinksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksTableViewController.swift; sourceTree = "<group>"; };
+		AD136B5628C36D5D00E5B7A0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AD136B5828C3A4E300E5B7A0 /* APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				AD136B4C28C2399300E5B7A0 /* Drink.swift */,
+				AD136B5828C3A4E300E5B7A0 /* APOD.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 		AD136B4B28C2397300E5B7A0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AD136B5628C36D5D00E5B7A0 /* NetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -202,8 +208,10 @@
 				AD136B5528C2482500E5B7A0 /* DrinksTableViewController.swift in Sources */,
 				AD136B4F28C2431E00E5B7A0 /* MainCollectionViewController.swift in Sources */,
 				AD136B4D28C2399300E5B7A0 /* Drink.swift in Sources */,
+				AD136B5728C36D5D00E5B7A0 /* NetworkManager.swift in Sources */,
 				AD136B3528C2392E00E5B7A0 /* SceneDelegate.swift in Sources */,
 				AD136B5328C2481200E5B7A0 /* ImageViewController.swift in Sources */,
+				AD136B5928C3A4E300E5B7A0 /* APOD.swift in Sources */,
 				AD136B5128C2474B00E5B7A0 /* ActionCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
