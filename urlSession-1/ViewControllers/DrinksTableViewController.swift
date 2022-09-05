@@ -95,11 +95,33 @@ extension DrinksTableViewController {
 //            }
 //        }
         
-        NetworkManager.shared.fetch(Drink.self, from: Link.margaritaURL.rawValue) { [weak self] result in
+        /*NetworkManager.shared.fetch(Drink.self, from: Link.margaritaURL.rawValue) { [weak self] result in
             switch result {
             case .success(let drinks):
                 self?.drinks = drinks
                 self?.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }*/
+        
+        /*AFNetworkManager.shared.fetchDrinks(from: Link.margaritaURL.rawValue) { [weak self] result in
+            switch result {
+            case .success(let drink2):
+                self?.drinks = drink2
+                self?.tableView.reloadData()
+                print(self?.drinks)
+            case .failure(let error):
+                print(error)
+            }
+        }*/
+        
+        AFNetworkManager.shared.fetch(type: Drink.self, from: Link.margaritaURL.rawValue) { [weak self] result in
+            switch result {
+            case .success(let drink2):
+                self?.drinks = drink2
+                self?.tableView.reloadData()
+                print(self?.drinks)
             case .failure(let error):
                 print(error)
             }

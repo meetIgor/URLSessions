@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 enum Link: String {
     case margaritaURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
     case imageURL = "https://apod.nasa.gov/apod/image/2209/TulipCygX-1.jpg"
@@ -177,33 +178,34 @@ class NetworkManager {
         }.resume()
     }
     
-//    func fetchAPODWithParam<T: Decodable> (_ type: T.Type, from url: String?, completion: @escaping (Result<T, NetworkError>) -> Void) {
-//        guard let url = URL(string: url ?? "") else {
-//            completion(.failure(.invalidURL))
-//            return
-//        }
-//
-//        var request = URLRequest(url: url)
-//        request.addValue("MR1H9Qy8R4s3D1DQhd6h5CvM8WDhfjebftt8CHlv", forHTTPHeaderField: "api_key")
-//        request.addValue("2022-08-28", forHTTPHeaderField: "start_date")
-//
-//        URLSession.shared.dataTask(with: request) { data, response, error in
-//            guard let data = data else {
-//                print(error?.localizedDescription ?? "no description")
-//                completion(.failure(.noData))
-//                return
-//            }
-//            print(response)
-//            do {
-//                let decoder = JSONDecoder()
-//                decoder.keyDecodingStrategy = .convertFromSnakeCase
-//                let type = try decoder.decode(T.self, from: data)
-//                DispatchQueue.main.async {
-//                    completion(.success(type))
-//                }
-//            } catch {
-//                completion(.failure(.decodingError))
-//            }
-//        }.resume()
-//    }
+
+    /*
+    func fetchAPODWithParameters(from url: String?, completion: @escaping (Result<[APOD2], NetworkError>) -> Void) {
+        guard let url = URL(string: url ?? "") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.addValue("MR1H9Qy8R4s3D1DQhd6h5CvM8WDhfjebftt8CHlv", forHTTPHeaderField: "api_key")
+        request.setValue("2022-08-28", forHTTPHeaderField: "start_date")
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data else {
+                print(error?.localizedDescription ?? "no description")
+                completion(.failure(.noData))
+                return
+            }
+            
+            do {
+                let apod = try JSONDecoder().decode([APOD2].self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(apod))
+                }
+            } catch {
+                completion(.failure(.decodingError))
+            }
+        }.resume()
+    }
+     */
 }

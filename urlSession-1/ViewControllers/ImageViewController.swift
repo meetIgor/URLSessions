@@ -47,7 +47,19 @@ class ImageViewController: UIViewController {
         }
         */
         
+        /*
         NetworkManager.shared.fetchImage(from: Link.imageURL.rawValue) { [weak self] result in
+            switch result {
+            case .success(let imageData):
+                self?.imageView.image = UIImage(data: imageData)
+                self?.activityIndicator.stopAnimating()
+            case .failure(let error):
+                print(error)
+            }
+        }
+        */
+        
+        AFNetworkManager.shared.fetchAPODImage(from: Link.imageURL.rawValue) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.imageView.image = UIImage(data: imageData)

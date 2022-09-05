@@ -20,6 +20,7 @@
 		AD136B5728C36D5D00E5B7A0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5628C36D5D00E5B7A0 /* NetworkManager.swift */; };
 		AD136B5928C3A4E300E5B7A0 /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5828C3A4E300E5B7A0 /* APOD.swift */; };
 		AD136B5C28C4BF7600E5B7A0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AD136B5B28C4BF7600E5B7A0 /* Alamofire */; };
+		AD136B5E28C4BFF600E5B7A0 /* AFNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD136B5D28C4BFF600E5B7A0 /* AFNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		AD136B5428C2482500E5B7A0 /* DrinksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksTableViewController.swift; sourceTree = "<group>"; };
 		AD136B5628C36D5D00E5B7A0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AD136B5828C3A4E300E5B7A0 /* APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
+		AD136B5D28C4BFF600E5B7A0 /* AFNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				AD136B5628C36D5D00E5B7A0 /* NetworkManager.swift */,
+				AD136B5D28C4BFF600E5B7A0 /* AFNetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD136B3328C2392E00E5B7A0 /* AppDelegate.swift in Sources */,
+				AD136B5E28C4BFF600E5B7A0 /* AFNetworkManager.swift in Sources */,
 				AD136B5528C2482500E5B7A0 /* DrinksTableViewController.swift in Sources */,
 				AD136B4F28C2431E00E5B7A0 /* MainCollectionViewController.swift in Sources */,
 				AD136B4D28C2399300E5B7A0 /* Drink.swift in Sources */,

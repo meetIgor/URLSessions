@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import Alamofire
 
 //private let reuseIdentifier = "Cell"
 
 class MainCollectionViewController: UICollectionViewController {
     
     private let actions = Action.allCases
+    private var apods: [APOD] = []
+    private var apod2: APOD2!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +77,11 @@ class MainCollectionViewController: UICollectionViewController {
             fetchAPOD()
         case .fetchAPODWithParam:
             fetchAPODWithParam()
+        case .afAPODFetch:
+            fetchAFNasa()
+            print(apods)
+        case .afPostRequest:
+            afPostRequest()
         }
     }
 }
@@ -181,19 +189,66 @@ extension MainCollectionViewController {
                 self?.failedAlert()
             }
         }
+        
     }
     
     func fetchAPODWithParam() {
-//        NetworkManager.shared.fetchAPODWithParam(APOD.self, from: nasaLink.apodURLMain.rawValue) { [weak self] result in
-//            switch result {
-//            case .success(let apod):
-//                print(apod)
-//                self?.successAlert()
-//            case .failure(let error):
-//                print(error)
-//                self?.failedAlert()
+        AFNetworkManager.shared.fetchApodWithParams(from: nasaLink.apodURLMain.rawValue) { [weak self] result in
+            switch result {
+            case .success(let apod):
+                print(apod)
+                self?.successAlert()
+            case .failure(let error):
+                print(error)
+                self?.failedAlert()
+            }
+        }
+    }
+    
+    func fetchAFNasa() {
+//        AF.request(nasaLink.apodURL.rawValue)
+//            .validate()
+//            .responseJSON { [weak self] dataResponse in
+//                switch dataResponse.result {
+//                case .success(let value):
+//                    self?.apods = APOD.getApods(from: value)
+//                case .failure(let error):
+//                    print(error)
+//                }
 //            }
-//        }
+        AFNetworkManager.shared.fetchAPOD(from: nasaLink.apodURL.rawValue) { [weak self] result in
+            switch result {
+            case .success(let apodData):
+                self?.apods = apodData
+                print(self?.apods)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func afPostRequest() {
+        let apod = APOD(apodData: [
+            "date" : "2022-09-04",
+            "explanation" : "very step caused the sand to light up blue. That glow was bioluminescence -- a blue radiance that also lights the surf in this surreal scene captured in mid-2018 at Meyer's Creek Beach in Oregon, USA. Volcanic stacks dot the foreground sea, while a thin fog layer scatters light on the horizon. The rays of light spreading from the left horizon were created by car headlights on the Oregon Coast Highway (US 101), while the orange light on the right horizon emanates from a fishing boat.  Visible far in the distance is the band of our Milky Way Galaxy, appearing to rise from a dark rocky outcrop.  Sixteen images were added together to bring up the background Milky Way and to reduce noise.    Your Sky Surprise: What picture did APOD feature on your birthday? (post 1995)",
+            "mediaType" : "image",
+            "serviceVersion" : "v1",
+            "title" : "Sea and Sky Glows over the Oregon Coast",
+            "url" : "https://apod.nasa.gov/apod/image/2209/MilkyWayOregon_Montoya_960.jpg",
+            "hdurl" : "https://apod.nasa.gov/apod/image/2209/MilkyWayOregon_Montoya_1500.jpg"
+        ]
+        )
+        
+        AFNetworkManager.shared.afPostRequest(to: Link.postRequest.rawValue, with: apod) { [weak self] result in
+            switch result {
+            case .success(let apodData):
+                print(apodData)
+                self?.successAlert()
+            case .failure(let error):
+                print(error)
+                self?.failedAlert()
+            }
+        }
     }
 }
 
@@ -206,6 +261,8 @@ enum Action: String, CaseIterable {
     case postRequestWithModel = "POST Req (Model)"
     case fetchAPOD = "fetch NASA"
     case fetchAPODWithParam = "fetch NASA with Param"
+    case afAPODFetch = " AF Fetch Nasa"
+    case afPostRequest = "AF POST"
 }
 
 // MARK: - Alert Controller
